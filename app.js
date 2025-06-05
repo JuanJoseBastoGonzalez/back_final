@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors'); // <--- Agrega esta línea
 const app = express();
 const db = require('./config/db'); // <--- Agrega esta línea
 
@@ -14,11 +15,7 @@ const reseñasRoutes = require('./routes/reseñasRoutes');
 
 // ... (otros middlewares)
 
-
-
-
-
-
+app.use(cors()); // <--- Agrega esta línea antes de las rutas
 
 app.get('/api/test-db', async (req, res) => {
   try {
